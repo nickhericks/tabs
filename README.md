@@ -5,15 +5,13 @@
  :mag: Live version available at [nickhericks.github.io/tabs/](https://nickhericks.github.io/tabs/)
 
 ## What I learned
-- More about dom traversal
+- DOM traversals
 - The `:not()` pseudo-class selector. For example, using it to give styling to elements that do not have the .is-selected class applied to them.
 
 ```JavaScript
-
 .tab:not(.is-selected) .tab__icon {
   color: rgba(255, 255, 255, 0.25);
 }
-
 ```
 
 ## Acknowledgements

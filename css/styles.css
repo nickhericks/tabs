@@ -159,7 +159,7 @@ p + p {
 }
 
 .tab-content {
-  display: grid;
+  display: none;
   padding: 2em;
   justify-content: center;
 }
@@ -221,15 +221,12 @@ p + p {
   color: rgba(255, 255, 255, 0.25);
 }
 
-.tab-content {
-  display: none;
-}
-
+/* Change tab background when selected */
 .tab.is-selected > a {
   background-color: #323232;
 }
 
-/* Using grid here instead of block since I styled the contents with CSS Grid */
+/* Display content when tab is selected */
 .tab-content.is-selected {
   display: grid;
 }
