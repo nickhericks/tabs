@@ -1,5 +1,4 @@
 /* Need to add visually hidden class? */
-
 .visually-hidden {
   position: absolute;
   overflow: hidden;
@@ -11,11 +10,8 @@
   border: 0;
 }
 
-/**
- * base styles and typography
- * --------------------------
- */
 
+/* Base styles and typography */
 :root {
   --bg-radioactive: linear-gradient(to right, #fd8d62, #fecb42);
   --color-radioactive: #fecb42;
@@ -73,11 +69,8 @@ p + p {
   margin-left: auto;
 }
 
-/**
- * SVG icons color
- * ---------------
- */
 
+/* SVG icons color */
 [data-icon-color="radioactive"] {
   color: var(--color-radioactive);
 }
@@ -102,11 +95,6 @@ p + p {
 [data-bg="biohazard"] {
   background-image: var(--bg-biohazard);
 }
-
-/**
- * # START EDITING HERE
- * ====================
- */
 
 .tabs {
   display: flex;
@@ -153,19 +141,16 @@ p + p {
   }
 }
 
-/**
- * Tab icon
- */
+
+/** Tab Icon */
 .tab__icon {
   width: 1.75rem;
   height: auto;
   vertical-align: middle;
 }
 
-/**
- * Tab Content
- * -----------
- */
+
+/** Tab Content */
 @media screen and (min-width: 850px) {
   .tab-content-container {
     background-color: #323232;
@@ -223,4 +208,28 @@ p + p {
 .tab-content__title {
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+/* Set inactive tab icons to 25% white to deemphasize the icons*/
+.tab:not(.is-selected) .tab__icon {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab.is-selected > a {
+  background-color: #323232;
+}
+
+/* Using grid here instead of block since I styled the contents with CSS Grid */
+.tab-content.is-selected {
+  display: grid;
 }
