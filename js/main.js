@@ -1,26 +1,22 @@
-const component = document.querySelector('.tabbed-component');
-const tabs = Array.from(component.querySelectorAll('.tab'));
-const contents = Array.from(component.querySelectorAll('.tab-content'));
+const component = document.querySelector(".tabbed-component");
+const tabList = component.querySelector(".tabs");
+const tabs = Array.from(component.querySelectorAll(".tab"));
+const contents = Array.from(component.querySelectorAll(".tab-content"));
 
+tabList.addEventListener("click", e => {
+  // Prevent tab from jumping
+  e.preventDefault();
 
-tabs.forEach(tab => {
+  const link = e.target.closest("a");
+  const tab = link.parentNode;
+  const href = link.getAttribute("href");
+  const tabContent = component.querySelector(href);
 
-  // Add event listener to each tab
-  tab.addEventListener('click', _ => {
+  // Hiding previous tab and tab content
+  tabs.forEach(elem => elem.classList.remove("is-selected"));
+  contents.forEach(elem => elem.classList.remove("is-selected"));
 
-    // Use attribute to select correct content
-    const link = tab.children[0]
-    const href = link.getAttribute('href')
-    console.log(href)
-    const tabContent = component.querySelector(href)
-
-    // Clear 'is-selector' class from all elements
-    tabs.forEach(elem => elem.classList.remove('is-selected'))
-    contents.forEach(elem => elem.classList.remove('is-selected'))
-
-    // Apply 'is-selector' class to selected tab and related content
-    tab.classList.add('is-selected')
-    tabContent.classList.add('is-selected')
-
-  })
-})
+  // Showing the selected tab and tab content
+  tab.classList.add("is-selected");
+  tabContent.classList.add("is-selected");
+});
