@@ -1,7 +1,7 @@
 const component = document.querySelector(".tabbed-component");
 const tabList = component.querySelector(".tabs");
-const tabs = Array.from(component.querySelectorAll(".tab"));
-const contents = Array.from(component.querySelectorAll(".tab-content"));
+const tabs = [...component.querySelectorAll(".tab")];
+const contents = [...component.querySelectorAll(".tab-content")];
 
 tabList.addEventListener("click", e => {
   // Prevent tab from jumping
