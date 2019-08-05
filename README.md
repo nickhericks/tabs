@@ -1,6 +1,8 @@
 # Tabbed component
 > This tabbed component allows you to show and hide content based on what the user selects.
 
+<img src="https://res.cloudinary.com/dtqevfsxh/image/upload/v1565016790/portfolio/connect-four.png" width="899px">
+
 ## View project
  :mag: Live version available at [nickhericks.github.io/tabs/](https://nickhericks.github.io/tabs/)
 
